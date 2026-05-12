@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>RISY ULTRA PRO v2</title>
+<title>RISY DESIGNER - ULTRA PRO</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
@@ -14,210 +16,549 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Outfit',sans-serif;
 scroll-behavior:smooth;
+font-family:'Outfit',sans-serif;
 }
 
 body{
-background:#050816;
+background:#030712;
 color:white;
 overflow-x:hidden;
 }
 
-/* BACKGROUND */
-.bg{
+/* CUSTOM SCROLL */
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:linear-gradient(#8b5cf6,#06b6d4);
+border-radius:20px;
+}
+
+/* ANIMATED BACKGROUND */
+
+.bg-animation{
 position:fixed;
 width:100%;
 height:100%;
-z-index:-1;
+overflow:hidden;
+z-index:-5;
+background:#030712;
 }
 
-.blob{
+.circle{
 position:absolute;
-width:300px;
-height:300px;
+border-radius:50%;
 filter:blur(120px);
-opacity:0.4;
-animation:float 10s infinite alternate;
+animation:move 15s infinite alternate;
 }
 
-.b1{background:#8b5cf6;top:-50px;left:-50px;}
-.b2{background:#06b6d4;bottom:-80px;right:-80px;}
-
-@keyframes float{
-from{transform:translate(0,0);}
-to{transform:translate(100px,-80px);}
+.circle1{
+width:400px;
+height:400px;
+background:#8b5cf6;
+top:-100px;
+left:-100px;
+opacity:0.35;
 }
 
-/* NAV */
+.circle2{
+width:350px;
+height:350px;
+background:#06b6d4;
+bottom:-100px;
+right:-100px;
+opacity:0.3;
+animation-delay:3s;
+}
+
+.circle3{
+width:250px;
+height:250px;
+background:#9333ea;
+top:40%;
+left:40%;
+opacity:0.2;
+animation-delay:6s;
+}
+
+@keyframes move{
+from{
+transform:translate(0,0) scale(1);
+}
+to{
+transform:translate(120px,-80px) scale(1.2);
+}
+}
+
+/* GRID BACKGROUND */
+
+.grid{
+position:fixed;
+width:100%;
+height:100%;
+background-image:
+linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+background-size:50px 50px;
+z-index:-4;
+}
+
+/* NAVBAR */
+
 nav{
 position:fixed;
 top:0;
+left:0;
 width:100%;
-padding:20px 8%;
+padding:25px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(10px);
+background:rgba(255,255,255,0.03);
+backdrop-filter:blur(15px);
+border-bottom:1px solid rgba(255,255,255,0.06);
 z-index:1000;
 }
 
 .logo{
-font-size:28px;
-font-weight:900;
+font-size:32px;
+font-weight:800;
 background:linear-gradient(to right,#8b5cf6,#06b6d4);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
-nav button{
-padding:10px 20px;
-border:none;
-border-radius:10px;
-background:linear-gradient(to right,#8b5cf6,#06b6d4);
+nav ul{
+display:flex;
+gap:35px;
+list-style:none;
+}
+
+nav ul li a{
+text-decoration:none;
 color:white;
-cursor:pointer;
+font-size:16px;
+transition:0.3s;
+position:relative;
+}
+
+nav ul li a::after{
+content:"";
+position:absolute;
+left:0;
+bottom:-5px;
+width:0%;
+height:2px;
+background:#8b5cf6;
+transition:0.4s;
+}
+
+nav ul li a:hover::after{
+width:100%;
 }
 
 /* HERO */
+
 .hero{
 min-height:100vh;
 display:flex;
-align-items:center;
 justify-content:space-between;
-padding:120px 8%;
-gap:40px;
+align-items:center;
+padding:150px 8%;
+gap:60px;
+position:relative;
 }
 
-.hero h1{
-font-size:65px;
+.hero-text{
+flex:1;
+animation:fadeUp 1s ease;
 }
 
-.hero span{
+.tag{
+display:inline-block;
+padding:10px 20px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:50px;
+margin-bottom:30px;
+backdrop-filter:blur(10px);
 color:#06b6d4;
+font-size:14px;
+}
+
+.hero-text h1{
+font-size:95px;
+line-height:1;
+font-weight:900;
+margin-bottom:30px;
+}
+
+.hero-text h1 span{
+background:linear-gradient(to right,#8b5cf6,#06b6d4);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 .typing{
+font-size:28px;
 color:#06b6d4;
-font-size:22px;
-height:30px;
-margin:15px 0;
+height:40px;
+margin-bottom:25px;
+font-weight:600;
 }
 
-/* BUTTON */
+.hero-text p{
+font-size:18px;
+line-height:1.9;
+color:#cbd5e1;
+max-width:650px;
+margin-bottom:40px;
+}
+
+.buttons{
+display:flex;
+gap:20px;
+flex-wrap:wrap;
+}
+
 .btn{
-display:inline-block;
-padding:14px 28px;
-border-radius:12px;
+padding:18px 40px;
+border-radius:16px;
 text-decoration:none;
-margin-right:10px;
+font-weight:600;
+transition:0.4s;
+position:relative;
+overflow:hidden;
 }
 
 .primary{
 background:linear-gradient(to right,#8b5cf6,#06b6d4);
 color:white;
+box-shadow:0 0 40px rgba(139,92,246,0.35);
 }
 
-/* CARD */
-.card{
-width:350px;
-height:450px;
-border-radius:20px;
+.primary:hover{
+transform:translateY(-5px) scale(1.03);
+}
+
+.secondary{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.08);
+color:white;
+backdrop-filter:blur(10px);
+}
+
+.secondary:hover{
+background:rgba(255,255,255,0.1);
+}
+
+/* HERO CARD */
+
+.hero-image{
+flex:1;
+display:flex;
+justify-content:center;
+position:relative;
+animation:fadeUp 1.2s ease;
+}
+
+.main-card{
+width:430px;
+height:540px;
+border-radius:35px;
 overflow:hidden;
+position:relative;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+box-shadow:0 0 60px rgba(139,92,246,0.2);
+transition:0.5s;
 }
 
-.card img{
+.main-card:hover{
+transform:translateY(-10px);
+}
+
+.main-card img{
 width:100%;
 height:100%;
 object-fit:cover;
 }
 
-/* SERVICES */
+/* FLOATING TECH BOXES */
+
+.tech-box{
+position:absolute;
+padding:18px 28px;
+background:rgba(255,255,255,0.06);
+backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:20px;
+font-weight:600;
+animation:float 4s infinite ease-in-out;
+}
+
+.box1{
+top:40px;
+left:-40px;
+}
+
+.box2{
+bottom:60px;
+right:-40px;
+animation-delay:2s;
+}
+
+.box3{
+top:45%;
+left:-60px;
+animation-delay:1s;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-15px);}
+100%{transform:translateY(0);}
+}
+
+/* SECTION */
+
 section{
-padding:100px 8%;
+padding:130px 8%;
 }
 
 .title{
+font-size:60px;
 text-align:center;
-font-size:45px;
-margin-bottom:50px;
+margin-bottom:80px;
+font-weight:900;
 }
 
-.title span{color:#06b6d4;}
+.title span{
+background:linear-gradient(to right,#8b5cf6,#06b6d4);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
 
-.grid{
+/* SERVICES */
+
+.services{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:35px;
 }
 
-.box{
-padding:25px;
-border-radius:15px;
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.1);
+.card{
+padding:45px;
+border-radius:30px;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+transition:0.5s;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:"";
+position:absolute;
+width:250px;
+height:250px;
+background:#8b5cf620;
+border-radius:50%;
+top:-120px;
+right:-120px;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 0 35px rgba(139,92,246,0.25);
+}
+
+.card h3{
+font-size:30px;
+margin-bottom:20px;
+}
+
+.card p{
+line-height:1.9;
+color:#cbd5e1;
+}
+
+/* PROJECTS */
+
+.projects{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
+gap:35px;
+}
+
+.project{
+height:280px;
+border-radius:30px;
+overflow:hidden;
+position:relative;
+cursor:pointer;
+}
+
+.project img{
+width:100%;
+height:100%;
+object-fit:cover;
+transition:0.5s;
+}
+
+.project:hover img{
+transform:scale(1.12);
+}
+
+.overlay{
+position:absolute;
+width:100%;
+height:100%;
+background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);
+display:flex;
+align-items:flex-end;
+padding:35px;
+font-size:26px;
+font-weight:700;
 }
 
 /* CONTACT */
-input,textarea{
+
+.contact-box{
+max-width:850px;
+margin:auto;
+padding:60px;
+border-radius:35px;
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+backdrop-filter:blur(20px);
+}
+
+.contact-box input,
+.contact-box textarea{
 width:100%;
-padding:15px;
-margin:10px 0;
-border-radius:10px;
+padding:20px;
+margin-bottom:25px;
 border:none;
+outline:none;
+border-radius:18px;
 background:rgba(255,255,255,0.05);
 color:white;
+font-size:16px;
 }
 
-button.send{
+.contact-box textarea{
+height:180px;
+}
+
+.contact-box button{
 width:100%;
-padding:15px;
+padding:20px;
 border:none;
-border-radius:10px;
+border-radius:18px;
 background:linear-gradient(to right,#8b5cf6,#06b6d4);
+color:white;
+font-size:18px;
+font-weight:700;
+cursor:pointer;
+transition:0.4s;
 }
 
-/* WHATSAPP BUTTON */
-.whatsapp{
+.contact-box button:hover{
+transform:scale(1.02);
+}
+
+/* FOOTER */
+
+footer{
+padding:50px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,0.06);
+color:#94a3b8;
+}
+
+/* BACK TO TOP */
+
+.top{
 position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
+right:25px;
+bottom:25px;
 width:60px;
 height:60px;
-border-radius:50%;
+background:linear-gradient(to right,#8b5cf6,#06b6d4);
 display:flex;
 justify-content:center;
 align-items:center;
-font-size:30px;
+border-radius:50%;
 text-decoration:none;
+color:white;
+font-size:26px;
+box-shadow:0 0 30px rgba(139,92,246,0.35);
 }
 
-/* LOGIN MODAL */
-.modal{
-position:fixed;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.8);
-display:none;
+/* ANIMATION */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(50px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-text h1{
+font-size:60px;
+}
+
+.hero-text p{
+margin:auto;
+margin-bottom:40px;
+}
+
+.buttons{
 justify-content:center;
-align-items:center;
 }
 
-.boxlogin{
-background:#111827;
-padding:30px;
-border-radius:15px;
-width:300px;
+nav{
+flex-direction:column;
+gap:20px;
 }
 
-.close{
-float:right;
-cursor:pointer;
-color:red;
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.main-card{
+width:320px;
+height:420px;
+}
+
+.title{
+font-size:42px;
+}
+
+.tech-box{
+display:none;
+}
+
 }
 
 </style>
@@ -226,113 +567,299 @@ color:red;
 
 <body>
 
-<div class="bg">
-<div class="blob b1"></div>
-<div class="blob b2"></div>
+<!-- BACKGROUND -->
+
+<div class="bg-animation">
+
+<div class="circle circle1"></div>
+<div class="circle circle2"></div>
+<div class="circle circle3"></div>
+
 </div>
 
-<!-- NAV -->
+<div class="grid"></div>
+
+<!-- NAVBAR -->
+
 <nav>
-<div class="logo">RISY PRO</div>
-<button onclick="openLogin()">Login</button>
+
+<div class="logo">RISY DESIGNER</div>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
 </nav>
 
 <!-- HERO -->
-<section class="hero">
 
-<div>
-<h1>Next Level <span>Web</span> Design</h1>
+<section class="hero" id="home">
+
+<div class="hero-text">
+
+<div class="tag">
+🔥 NEXT LEVEL DIGITAL EXPERIENCE
+</div>
+
+<h1>
+Modern <span>IT</span><br>
+Solutions
+</h1>
 
 <div class="typing" id="typing"></div>
 
-<a href="#contact" class="btn primary">Start Project</a>
+<p>
+I create premium websites, software systems,
+branding designs and modern digital experiences
+with futuristic UI/UX and smooth animations.
+</p>
+
+<div class="buttons">
+
+<a href="#contact" class="btn primary">
+Start Project
+</a>
+
+<a href="#projects" class="btn secondary">
+View Portfolio
+</a>
+
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
+</div>
+
+<div class="hero-image">
+
+<div class="main-card">
+
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop">
+
+<div class="tech-box box1">
+💻 Web Design
+</div>
+
+<div class="tech-box box2">
+⚡ Premium UI
+</div>
+
+<div class="tech-box box3">
+🚀 Modern Tech
+</div>
+
+</div>
+
 </div>
 
 </section>
 
 <!-- SERVICES -->
-<section>
-<h2 class="title">My <span>Services</span></h2>
 
-<div class="grid">
-<div class="box">Web Design</div>
-<div class="box">UI/UX</div>
-<div class="box">Software Dev</div>
+<section id="services">
+
+<h2 class="title">
+My <span>Services</span>
+</h2>
+
+<div class="services">
+
+<div class="card">
+
+<h3>🌐 Web Development</h3>
+
+<p>
+Modern responsive business websites with premium animations and futuristic design.
+</p>
+
 </div>
+
+<div class="card">
+
+<h3>🎨 Graphic Design</h3>
+
+<p>
+Creative branding, social media posters, logo design and modern visual identity.
+</p>
+
+</div>
+
+<div class="card">
+
+<h3>💻 Software Solutions</h3>
+
+<p>
+Desktop applications, automation systems and modern software experiences.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<h2 class="title">
+Latest <span>Projects</span>
+</h2>
+
+<div class="projects">
+
+<div class="project">
+
+<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop">
+
+<div class="overlay">
+Business Website
+</div>
+
+</div>
+
+<div class="project">
+
+<img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1000&auto=format&fit=crop">
+
+<div class="overlay">
+Creative Branding
+</div>
+
+</div>
+
+<div class="project">
+
+<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop">
+
+<div class="overlay">
+Software Project
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 <!-- CONTACT -->
+
 <section id="contact">
-<h2 class="title">Contact <span>Me</span></h2>
 
-<input type="text" placeholder="Name">
-<input type="email" placeholder="Email">
-<textarea placeholder="Message"></textarea>
+<h2 class="title">
+Contact <span>Me</span>
+</h2>
 
-<button class="send">Send</button>
+<div class="contact-box">
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Your Email">
+
+<textarea placeholder="Tell Me About Your Project"></textarea>
+
+<button>
+Send Message
+</button>
+
+</div>
+
 </section>
 
-<!-- WHATSAPP -->
-<a class="whatsapp" href="https://wa.me/94771815849" target="_blank">
-💬
+<!-- FOOTER -->
+
+<footer>
+
+<h2>RISY DESIGNER</h2>
+
+<p>
+© 2026 All Rights Reserved
+</p>
+
+</footer>
+
+<!-- TOP BUTTON -->
+
+<a href="#home" class="top">
+↑
 </a>
-
-<!-- LOGIN MODAL -->
-<div class="modal" id="modal">
-
-<div class="boxlogin">
-<span class="close" onclick="closeLogin()">X</span>
-
-<h3>Login</h3>
-<input type="text" placeholder="Username">
-<input type="password" placeholder="Password">
-<button class="send">Login</button>
-
-</div>
-
-</div>
 
 <script>
 
-// typing
-let words=["Web Developer","UI Designer","Software Engineer"];
-let i=0,j=0,el=document.getElementById("typing");
+/* TYPING EFFECT */
+
+const texts=[
+"Web Developer",
+"Graphic Designer",
+"Software Developer",
+"UI/UX Designer"
+];
+
+let speed=100;
+let textIndex=0;
+let charIndex=0;
+
+const typing=document.getElementById("typing");
 
 function type(){
-if(j<words[i].length){
-el.innerHTML+=words[i][j++];
-setTimeout(type,100);
+
+if(charIndex<texts[textIndex].length){
+
+typing.innerHTML+=texts[textIndex].charAt(charIndex);
+
+charIndex++;
+
+setTimeout(type,speed);
+
 }else{
-setTimeout(erase,1000);
+
+setTimeout(erase,1500);
+
 }
+
 }
 
 function erase(){
-if(j>0){
-el.innerHTML=words[i].substring(0,--j);
+
+if(charIndex>0){
+
+typing.innerHTML=texts[textIndex].substring(0,charIndex-1);
+
+charIndex--;
+
 setTimeout(erase,50);
+
 }else{
-i=(i+1)%words.length;
-setTimeout(type,300);
-}
+
+textIndex++;
+
+if(textIndex>=texts.length){
+textIndex=0;
 }
 
-type();
+setTimeout(type,500);
 
-// login
-function openLogin(){
-document.getElementById("modal").style.display="flex";
 }
 
-function closeLogin(){
-document.getElementById("modal").style.display="none";
 }
+
+document.addEventListener("DOMContentLoaded",function(){
+
+if(texts.length){
+setTimeout(type,1000);
+}
+
+});
 
 </script>
 
 </body>
+
 </html>
+
+
+
+
