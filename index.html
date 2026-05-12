@@ -2,122 +2,103 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>RISY DESIGNER</title>
+<title>RISY DESIGNER - ULTRA PRO</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
 
+/* BASIC RESET */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+font-family:'Outfit',sans-serif;
 scroll-behavior:smooth;
-font-family:'Poppins',sans-serif;
 }
 
 body{
-background:#050816;
+background:#030712;
 color:white;
 overflow-x:hidden;
 }
 
-/* LOADER */
-
-#loader{
-position:fixed;
-width:100%;
-height:100vh;
-background:#050816;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:9999;
-}
-
-#loader h1{
-font-size:50px;
-color:#8b5cf6;
-animation:pulse 1s infinite;
-}
-
-@keyframes pulse{
-0%{opacity:0.3;}
-50%{opacity:1;}
-100%{opacity:0.3;}
-}
-
 /* BACKGROUND */
-
-.particles{
+.bg-animation{
 position:fixed;
 width:100%;
 height:100%;
-background-image:
-radial-gradient(#8b5cf6 1px, transparent 1px);
-background-size:40px 40px;
-opacity:0.08;
-animation:movebg 20s linear infinite;
-z-index:-1;
+z-index:-5;
+background:#030712;
 }
 
-@keyframes movebg{
-from{
-transform:translateY(0);
+.circle{
+position:absolute;
+border-radius:50%;
+filter:blur(120px);
+animation:move 15s infinite alternate;
 }
-to{
-transform:translateY(-100px);
+
+.circle1{
+width:400px;
+height:400px;
+background:#8b5cf6;
+top:-100px;
+left:-100px;
+opacity:0.35;
 }
+
+.circle2{
+width:350px;
+height:350px;
+background:#06b6d4;
+bottom:-100px;
+right:-100px;
+opacity:0.3;
+}
+
+@keyframes move{
+from{transform:translate(0,0);}
+to{transform:translate(120px,-80px);}
 }
 
 /* NAVBAR */
-
 nav{
+position:fixed;
+top:0;
 width:100%;
-padding:20px 8%;
+padding:25px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-position:fixed;
-top:0;
-left:0;
+background:rgba(255,255,255,0.03);
+backdrop-filter:blur(15px);
 z-index:1000;
-transition:0.4s;
-}
-
-nav.active{
-background:rgba(5,8,22,0.9);
-backdrop-filter:blur(10px);
 }
 
 .logo{
-font-size:30px;
-font-weight:700;
-color:#8b5cf6;
+font-size:32px;
+font-weight:800;
+background:linear-gradient(to right,#8b5cf6,#06b6d4);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
 nav ul{
 display:flex;
-list-style:none;
 gap:30px;
+list-style:none;
 }
 
 nav ul li a{
 text-decoration:none;
 color:white;
-transition:0.3s;
-}
-
-nav ul li a:hover{
-color:#8b5cf6;
 }
 
 /* HERO */
-
 .hero{
 min-height:100vh;
 display:flex;
@@ -127,670 +108,218 @@ padding:140px 8%;
 gap:60px;
 }
 
-.hero-text{
-flex:1;
-}
-
-.hero-text h3{
-font-size:28px;
-color:#8b5cf6;
-}
-
 .hero-text h1{
-font-size:75px;
-line-height:1.1;
-margin:20px 0;
+font-size:80px;
+font-weight:900;
 }
 
-.hero-text h1 span{
-color:#8b5cf6;
+.hero-text span{
+background:linear-gradient(to right,#8b5cf6,#06b6d4);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-.hero-text h2{
-font-size:35px;
+.typing{
 color:#06b6d4;
-height:50px;
+font-size:24px;
+margin:15px 0;
 }
 
-.hero-text p{
-line-height:1.8;
-color:#cbd5e1;
-margin-bottom:30px;
-}
-
-.buttons{
-display:flex;
-gap:20px;
-}
-
+/* BUTTONS */
 .btn{
-padding:15px 35px;
-border-radius:10px;
+padding:15px 30px;
+border-radius:12px;
 text-decoration:none;
 font-weight:600;
-transition:0.4s;
+display:inline-block;
 }
 
 .primary{
-background:#8b5cf6;
+background:linear-gradient(to right,#8b5cf6,#06b6d4);
 color:white;
-}
-
-.primary:hover{
-transform:translateY(-5px);
-box-shadow:0 0 25px #8b5cf6;
 }
 
 .secondary{
-border:2px solid #8b5cf6;
+background:rgba(255,255,255,0.05);
 color:white;
 }
 
-.secondary:hover{
-background:#8b5cf6;
-}
-
-/* HERO IMAGE */
-
-.hero-image{
-flex:1;
-display:flex;
-justify-content:center;
-}
-
-.hero-image img{
-width:400px;
-border-radius:30px;
-box-shadow:0 0 50px rgba(139,92,246,0.5);
-animation:float 3s ease-in-out infinite;
-}
-
-@keyframes float{
-0%{transform:translateY(0);}
-50%{transform:translateY(-20px);}
-100%{transform:translateY(0);}
-}
-
-/* SECTION */
-
+/* SECTIONS */
 section{
-padding:100px 8%;
+padding:120px 8%;
 }
 
 .title{
 text-align:center;
-font-size:45px;
+font-size:50px;
 margin-bottom:60px;
 }
 
-.title span{
-color:#8b5cf6;
-}
-
-/* ABOUT */
-
-.about-box{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-}
-
-.glass{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:blur(10px);
-border-radius:20px;
-padding:35px;
-transition:0.4s;
-}
-
-.glass:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px rgba(139,92,246,0.4);
-}
-
-/* SERVICES */
-
-.service-container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:30px;
-}
-
+/* CARDS */
 .card{
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.08);
-padding:35px;
+background:rgba(255,255,255,0.04);
+padding:30px;
 border-radius:20px;
-transition:0.4s;
-}
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 25px rgba(139,92,246,0.4);
-}
-
-.card h3{
-color:#8b5cf6;
-margin-bottom:15px;
-}
-
-/* SKILLS */
-
-.skill-box{
-background:rgba(255,255,255,0.05);
-padding:40px;
-border-radius:20px;
-}
-
-.skill{
-margin-bottom:25px;
-}
-
-.progress{
-width:100%;
-height:10px;
-background:#1e293b;
-border-radius:20px;
-}
-
-.progress div{
-height:100%;
-background:#8b5cf6;
-border-radius:20px;
-}
-
-/* PROJECTS */
-
-.project-container{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:30px;
-}
-
-.project-card{
-position:relative;
-overflow:hidden;
-border-radius:20px;
-}
-
-.project-card img{
-width:100%;
-height:250px;
-object-fit:cover;
-transition:0.5s;
-}
-
-.project-card:hover img{
-transform:scale(1.1);
-}
-
-.overlay{
-position:absolute;
-top:0;
-left:0;
-width:100%;
-height:100%;
-background:rgba(0,0,0,0.6);
-display:flex;
-justify-content:center;
-align-items:center;
-opacity:0;
-transition:0.4s;
-}
-
-.project-card:hover .overlay{
-opacity:1;
 }
 
 /* CONTACT */
-
 .contact-box{
 max-width:700px;
 margin:auto;
-background:rgba(255,255,255,0.05);
 padding:40px;
-border-radius:20px;
+background:rgba(255,255,255,0.04);
+border-radius:25px;
 }
 
-.contact-box input,
-.contact-box textarea{
+input,textarea{
 width:100%;
 padding:15px;
-margin-bottom:20px;
+margin:10px 0;
 border:none;
 border-radius:10px;
-background:#0f172a;
+background:rgba(255,255,255,0.05);
 color:white;
-}
-
-.contact-box textarea{
-height:150px;
-}
-
-.contact-box button{
-width:100%;
-padding:15px;
-border:none;
-background:#8b5cf6;
-color:white;
-border-radius:10px;
-cursor:pointer;
-font-size:16px;
 }
 
 /* FOOTER */
-
 footer{
-background:#0f172a;
-padding:40px;
 text-align:center;
+padding:40px;
+color:#94a3b8;
 }
 
-/* WHATSAPP */
-
+/* WHATSAPP BUTTON 🔥 */
 .whatsapp{
 position:fixed;
 bottom:25px;
 right:25px;
-width:60px;
-height:60px;
-background:#25d366;
+width:65px;
+height:65px;
+background:#25D366;
+border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
-border-radius:50%;
-font-size:30px;
-text-decoration:none;
+font-size:32px;
 color:white;
+text-decoration:none;
+box-shadow:0 0 20px rgba(37,211,102,0.6);
+animation:float 3s infinite ease-in-out;
+z-index:9999;
 }
 
-/* RESPONSIVE */
-
-@media(max-width:900px){
-
-.hero{
-flex-direction:column;
-text-align:center;
-}
-
-.hero-text h1{
-font-size:45px;
-}
-
-.buttons{
-justify-content:center;
-}
-
-nav{
-flex-direction:column;
-gap:20px;
-}
-
-nav ul{
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.hero-image img{
-width:300px;
-}
-
+@keyframes float{
+0%{transform:translateY(0);}
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
 }
 
 </style>
-
 </head>
 
 <body>
 
-<!-- LOADER -->
-
-<div id="loader">
-<h1>RISY DESIGNER</h1>
+<!-- BACKGROUND -->
+<div class="bg-animation">
+<div class="circle circle1"></div>
+<div class="circle circle2"></div>
 </div>
 
-<!-- BACKGROUND -->
-
-<div class="particles"></div>
-
-<!-- NAVBAR -->
-
-<nav id="navbar">
-
+<!-- NAV -->
+<nav>
 <div class="logo">RISY DESIGNER</div>
-
 <ul>
-
 <li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
 <li><a href="#services">Services</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
 <li><a href="#contact">Contact</a></li>
-
 </ul>
-
 </nav>
 
 <!-- HERO -->
-
 <section class="hero" id="home">
 
 <div class="hero-text">
 
-<h3>Hello I'm</h3>
+<h1>Modern <span>IT</span> Solutions</h1>
 
-<h1>RISY <span>DESIGNER</span></h1>
+<div class="typing" id="typing"></div>
 
-<h2><span class="typing"></span></h2>
+<p>Premium Web Design & Development Services</p>
 
-<p>
-Professional Web Developer, Graphic Designer,
-Software Developer & Data Entry Expert.
-</p>
-
-<div class="buttons">
-
-<a href="#contact" class="btn primary">Hire Me</a>
-
-<a href="#projects" class="btn secondary">View Projects</a>
-
-</div>
-
-</div>
-
-<div class="hero-image">
-
-<img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?q=80&w=1000&auto=format&fit=crop">
-
-</div>
-
-</section>
-
-<!-- ABOUT -->
-
-<section id="about">
-
-<h2 class="title">About <span>Me</span></h2>
-
-<div class="about-box">
-
-<div class="glass">
-
-<h3>Who Am I?</h3>
-
-<p>
-I create modern business websites,
-graphic designs and software solutions
-with premium professional UI/UX.
-</p>
-
-</div>
-
-<div class="glass">
-
-<h3>Experience</h3>
-
-<p>
-
-✔ Professional Website Design <br><br>
-
-✔ Graphic Design & Branding <br><br>
-
-✔ Data Entry & Office Work <br><br>
-
-✔ Software Development
-
-</p>
-
-</div>
+<a href="#contact" class="btn primary">Start Project</a>
+<a href="#services" class="btn secondary">View Work</a>
 
 </div>
 
 </section>
 
 <!-- SERVICES -->
-
 <section id="services">
 
-<h2 class="title">My <span>Services</span></h2>
+<h2 class="title">Services</h2>
 
-<div class="service-container">
-
-<div class="card">
-
-<h3>🌐 Web Development</h3>
-
-<p>
-Responsive websites using HTML, CSS & JavaScript.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>🎨 Graphic Design</h3>
-
-<p>
-Professional posters, logos and branding designs.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>💻 Software Development</h3>
-
-<p>
-Desktop software and automation solutions.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>⌨ Data Entry</h3>
-
-<p>
-Fast typing and accurate office work.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- SKILLS -->
-
-<section id="skills">
-
-<h2 class="title">My <span>Skills</span></h2>
-
-<div class="skill-box">
-
-<div class="skill">
-
-<h4>HTML & CSS</h4>
-
-<div class="progress">
-<div style="width:95%"></div>
-</div>
-
-</div>
-
-<div class="skill">
-
-<h4>JavaScript</h4>
-
-<div class="progress">
-<div style="width:85%"></div>
-</div>
-
-</div>
-
-<div class="skill">
-
-<h4>Graphic Design</h4>
-
-<div class="progress">
-<div style="width:90%"></div>
-</div>
-
-</div>
-
-<div class="skill">
-
-<h4>Data Entry</h4>
-
-<div class="progress">
-<div style="width:98%"></div>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- PROJECTS -->
-
-<section id="projects">
-
-<h2 class="title">Latest <span>Projects</span></h2>
-
-<div class="project-container">
-
-<div class="project-card">
-
-<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop">
-
-<div class="overlay">
-<h3>Business Website</h3>
-</div>
-
-</div>
-
-<div class="project-card">
-
-<img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1000&auto=format&fit=crop">
-
-<div class="overlay">
-<h3>Graphic Design</h3>
-</div>
-
-</div>
-
-<div class="project-card">
-
-<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop">
-
-<div class="overlay">
-<h3>Software Project</h3>
-</div>
-
-</div>
-
-</div>
+<div class="card">Web Development</div>
 
 </section>
 
 <!-- CONTACT -->
-
 <section id="contact">
 
-<h2 class="title">Contact <span>Me</span></h2>
+<h2 class="title">Contact</h2>
 
 <div class="contact-box">
 
-<input type="text" placeholder="Your Name">
+<input placeholder="Name">
+<input placeholder="Email">
+<textarea placeholder="Message"></textarea>
 
-<input type="email" placeholder="Your Email">
-
-<textarea placeholder="Your Message"></textarea>
-
-<button>Send Message</button>
+<button class="btn primary">Send</button>
 
 </div>
 
 </section>
 
 <!-- FOOTER -->
-
 <footer>
-
-<h3>RISY DESIGNER</h3>
-
-<p>© 2026 All Rights Reserved</p>
-
+© 2026 RISY DESIGNER
 </footer>
 
-<!-- WHATSAPP -->
+<!-- WHATSAPP BUTTON 🔥 -->
+<a class="whatsapp"
+href="https://wa.me/94771815849?text=Hi%20I%20need%20a%20website%20design"
+target="_blank">
 
-<a href="#" class="whatsapp">💬</a>
+💬
 
+</a>
+
+<!-- SCRIPT -->
 <script>
 
-/* LOADER */
+const texts=["Web Developer","Designer","Software Developer"];
+let i=0,j=0;
+const el=document.getElementById("typing");
 
-window.addEventListener("load",function(){
-
-document.getElementById("loader").style.display="none";
-
-});
-
-/* NAVBAR */
-
-window.addEventListener("scroll",function(){
-
-let navbar=document.getElementById("navbar");
-
-navbar.classList.toggle("active",window.scrollY>50);
-
-});
-
-/* TYPING EFFECT */
-
-const text=[
-"Web Developer",
-"Graphic Designer",
-"Software Developer",
-"Data Entry Expert"
-];
-
-let count=0;
-let index=0;
-let currentText="";
-let letter="";
-
-(function type(){
-
-if(count===text.length){
-count=0;
-}
-
-currentText=text[count];
-
-letter=currentText.slice(0,++index);
-
-document.querySelector(".typing").textContent=letter;
-
-if(letter.length===currentText.length){
-
-count++;
-
-index=0;
-
-setTimeout(type,1000);
-
+function type(){
+if(j<texts[i].length){
+el.innerHTML+=texts[i][j++];
+setTimeout(type,100);
 }else{
-
-setTimeout(type,120);
-
+setTimeout(erase,1000);
+}
 }
 
-})();
+function erase(){
+if(j>0){
+el.innerHTML=texts[i].substring(0,--j);
+setTimeout(erase,50);
+}else{
+i=(i+1)%texts.length;
+setTimeout(type,500);
+}
+}
+
+type();
 
 </script>
 
