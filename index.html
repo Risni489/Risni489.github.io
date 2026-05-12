@@ -1,8 +1,11 @@
-<!DOCTYPE html>
+x<!DOCTYPE html>
 <html lang="en">
 
 <head>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -12,12 +15,21 @@
 
 <style>
 
+<<<<<<< HEAD
+=======
+/* BASIC RESET */
+>>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
+<<<<<<< HEAD
 scroll-behavior:smooth;
 font-family:'Outfit',sans-serif;
+=======
+font-family:'Outfit',sans-serif;
+scroll-behavior:smooth;
+>>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 }
 
 body{
@@ -26,6 +38,7 @@ color:white;
 overflow-x:hidden;
 }
 
+<<<<<<< HEAD
 /* CUSTOM SCROLL */
 
 ::-webkit-scrollbar{
@@ -39,11 +52,17 @@ border-radius:20px;
 
 /* ANIMATED BACKGROUND */
 
+=======
+/* BACKGROUND */
+>>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 .bg-animation{
 position:fixed;
 width:100%;
 height:100%;
+<<<<<<< HEAD
 overflow:hidden;
+=======
+>>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 z-index:-5;
 background:#030712;
 }
@@ -71,6 +90,7 @@ background:#06b6d4;
 bottom:-100px;
 right:-100px;
 opacity:0.3;
+<<<<<<< HEAD
 animation-delay:3s;
 }
 
@@ -112,6 +132,19 @@ nav{
 position:fixed;
 top:0;
 left:0;
+=======
+}
+
+@keyframes move{
+from{transform:translate(0,0);}
+to{transform:translate(120px,-80px);}
+}
+
+/* NAVBAR */
+nav{
+position:fixed;
+top:0;
+>>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 width:100%;
 padding:25px 8%;
 display:flex;
@@ -119,7 +152,10 @@ justify-content:space-between;
 align-items:center;
 background:rgba(255,255,255,0.03);
 backdrop-filter:blur(15px);
+<<<<<<< HEAD
 border-bottom:1px solid rgba(255,255,255,0.06);
+=======
+>>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 z-index:1000;
 }
 
@@ -133,13 +169,18 @@ background:linear-gradient(to right,#8b5cf6,#06b6d4);
 
 nav ul{
 display:flex;
+<<<<<<< HEAD
 gap:35px;
+=======
+gap:30px;
+>>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 list-style:none;
 }
 
 nav ul li a{
 text-decoration:none;
 color:white;
+<<<<<<< HEAD
 font-size:16px;
 transition:0.3s;
 position:relative;
@@ -162,11 +203,17 @@ width:100%;
 
 /* HERO */
 
+=======
+}
+
+/* HERO */
+>>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 .hero{
 min-height:100vh;
 display:flex;
 justify-content:space-between;
 align-items:center;
+<<<<<<< HEAD
 padding:150px 8%;
 gap:60px;
 position:relative;
@@ -197,12 +244,25 @@ margin-bottom:30px;
 }
 
 .hero-text h1 span{
+=======
+padding:140px 8%;
+gap:60px;
+}
+
+.hero-text h1{
+font-size:80px;
+font-weight:900;
+}
+
+.hero-text span{
+>>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 background:linear-gradient(to right,#8b5cf6,#06b6d4);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
 .typing{
+<<<<<<< HEAD
 font-size:28px;
 color:#06b6d4;
 height:40px;
@@ -232,20 +292,38 @@ font-weight:600;
 transition:0.4s;
 position:relative;
 overflow:hidden;
+=======
+color:#06b6d4;
+font-size:24px;
+margin:15px 0;
+}
+
+/* BUTTONS */
+.btn{
+padding:15px 30px;
+border-radius:12px;
+text-decoration:none;
+font-weight:600;
+display:inline-block;
+>>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 }
 
 .primary{
 background:linear-gradient(to right,#8b5cf6,#06b6d4);
 color:white;
+<<<<<<< HEAD
 box-shadow:0 0 40px rgba(139,92,246,0.35);
 }
 
 .primary:hover{
 transform:translateY(-5px) scale(1.03);
+=======
+>>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 }
 
 .secondary{
 background:rgba(255,255,255,0.05);
+<<<<<<< HEAD
 border:1px solid rgba(255,255,255,0.08);
 color:white;
 backdrop-filter:blur(10px);
@@ -316,10 +394,78 @@ animation-delay:2s;
 top:45%;
 left:-60px;
 animation-delay:1s;
+=======
+color:white;
+}
+
+/* SECTIONS */
+section{
+padding:120px 8%;
+}
+
+.title{
+text-align:center;
+font-size:50px;
+margin-bottom:60px;
+}
+
+/* CARDS */
+.card{
+background:rgba(255,255,255,0.04);
+padding:30px;
+border-radius:20px;
+}
+
+/* CONTACT */
+.contact-box{
+max-width:700px;
+margin:auto;
+padding:40px;
+background:rgba(255,255,255,0.04);
+border-radius:25px;
+}
+
+input,textarea{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:none;
+border-radius:10px;
+background:rgba(255,255,255,0.05);
+color:white;
+}
+
+/* FOOTER */
+footer{
+text-align:center;
+padding:40px;
+color:#94a3b8;
+}
+
+/* WHATSAPP BUTTON 🔥 */
+.whatsapp{
+position:fixed;
+bottom:25px;
+right:25px;
+width:65px;
+height:65px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:32px;
+color:white;
+text-decoration:none;
+box-shadow:0 0 20px rgba(37,211,102,0.6);
+animation:float 3s infinite ease-in-out;
+z-index:9999;
+>>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 }
 
 @keyframes float{
 0%{transform:translateY(0);}
+<<<<<<< HEAD
 50%{transform:translateY(-15px);}
 100%{transform:translateY(0);}
 }
@@ -563,11 +709,19 @@ display:none;
 
 </style>
 
+=======
+50%{transform:translateY(-10px);}
+100%{transform:translateY(0);}
+}
+
+</style>
+>>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 </head>
 
 <body>
 
 <!-- BACKGROUND -->
+<<<<<<< HEAD
 
 <div class="bg-animation">
 
@@ -598,10 +752,29 @@ display:none;
 
 <!-- HERO -->
 
+=======
+<div class="bg-animation">
+<div class="circle circle1"></div>
+<div class="circle circle2"></div>
+</div>
+
+<!-- NAV -->
+<nav>
+<div class="logo">RISY DESIGNER</div>
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+</nav>
+
+<!-- HERO -->
+>>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 <section class="hero" id="home">
 
 <div class="hero-text">
 
+<<<<<<< HEAD
 <div class="tag">
 🔥 NEXT LEVEL DIGITAL EXPERIENCE
 </div>
@@ -652,12 +825,23 @@ View Portfolio
 </div>
 
 </div>
+=======
+<h1>Modern <span>IT</span> Solutions</h1>
+
+<div class="typing" id="typing"></div>
+
+<p>Premium Web Design & Development Services</p>
+
+<a href="#contact" class="btn primary">Start Project</a>
+<a href="#services" class="btn secondary">View Work</a>
+>>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 
 </div>
 
 </section>
 
 <!-- SERVICES -->
+<<<<<<< HEAD
 
 <section id="services">
 
@@ -742,10 +926,18 @@ Software Project
 </div>
 
 </div>
+=======
+<section id="services">
+
+<h2 class="title">Services</h2>
+
+<div class="card">Web Development</div>
+>>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 
 </section>
 
 <!-- CONTACT -->
+<<<<<<< HEAD
 
 <section id="contact">
 
@@ -764,12 +956,26 @@ Contact <span>Me</span>
 <button>
 Send Message
 </button>
+=======
+<section id="contact">
+
+<h2 class="title">Contact</h2>
+
+<div class="contact-box">
+
+<input placeholder="Name">
+<input placeholder="Email">
+<textarea placeholder="Message"></textarea>
+
+<button class="btn primary">Send</button>
+>>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 
 </div>
 
 </section>
 
 <!-- FOOTER -->
+<<<<<<< HEAD
 
 <footer>
 
@@ -853,9 +1059,54 @@ setTimeout(type,1000);
 }
 
 });
+=======
+<footer>
+© 2026 RISY DESIGNER
+</footer>
+
+<!-- WHATSAPP BUTTON 🔥 -->
+<a class="whatsapp"
+href="https://wa.me/94771815849?text=Hi%20I%20need%20a%20website%20design"
+target="_blank">
+
+💬
+
+</a>
+
+<!-- SCRIPT -->
+<script>
+
+const texts=["Web Developer","Designer","Software Developer"];
+let i=0,j=0;
+const el=document.getElementById("typing");
+
+function type(){
+if(j<texts[i].length){
+el.innerHTML+=texts[i][j++];
+setTimeout(type,100);
+}else{
+setTimeout(erase,1000);
+}
+}
+
+function erase(){
+if(j>0){
+el.innerHTML=texts[i].substring(0,--j);
+setTimeout(erase,50);
+}else{
+i=(i+1)%texts.length;
+setTimeout(type,500);
+}
+}
+
+type();
+>>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 
 </script>
 
 </body>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 </html>
