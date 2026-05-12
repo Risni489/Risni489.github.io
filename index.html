@@ -1,1088 +1,310 @@
-x<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-<<<<<<< HEAD
-
-=======
->>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>RISY DESIGNER - ULTRA PRO</title>
+<title>RISY ULTRA PRO v2</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800;900&display=swap" rel="stylesheet">
 
 <style>
 
-<<<<<<< HEAD
-=======
-/* BASIC RESET */
->>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-<<<<<<< HEAD
-scroll-behavior:smooth;
-font-family:'Outfit',sans-serif;
-=======
 font-family:'Outfit',sans-serif;
 scroll-behavior:smooth;
->>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 }
 
 body{
-background:#030712;
+background:#050816;
 color:white;
 overflow-x:hidden;
 }
 
-<<<<<<< HEAD
-/* CUSTOM SCROLL */
-
-::-webkit-scrollbar{
-width:8px;
-}
-
-::-webkit-scrollbar-thumb{
-background:linear-gradient(#8b5cf6,#06b6d4);
-border-radius:20px;
-}
-
-/* ANIMATED BACKGROUND */
-
-=======
 /* BACKGROUND */
->>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
-.bg-animation{
+.bg{
 position:fixed;
 width:100%;
 height:100%;
-<<<<<<< HEAD
-overflow:hidden;
-=======
->>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
-z-index:-5;
-background:#030712;
+z-index:-1;
 }
 
-.circle{
+.blob{
 position:absolute;
-border-radius:50%;
+width:300px;
+height:300px;
 filter:blur(120px);
-animation:move 15s infinite alternate;
+opacity:0.4;
+animation:float 10s infinite alternate;
 }
 
-.circle1{
-width:400px;
-height:400px;
-background:#8b5cf6;
-top:-100px;
-left:-100px;
-opacity:0.35;
-}
+.b1{background:#8b5cf6;top:-50px;left:-50px;}
+.b2{background:#06b6d4;bottom:-80px;right:-80px;}
 
-.circle2{
-width:350px;
-height:350px;
-background:#06b6d4;
-bottom:-100px;
-right:-100px;
-opacity:0.3;
-<<<<<<< HEAD
-animation-delay:3s;
-}
-
-.circle3{
-width:250px;
-height:250px;
-background:#9333ea;
-top:40%;
-left:40%;
-opacity:0.2;
-animation-delay:6s;
-}
-
-@keyframes move{
-from{
-transform:translate(0,0) scale(1);
-}
-to{
-transform:translate(120px,-80px) scale(1.2);
-}
-}
-
-/* GRID BACKGROUND */
-
-.grid{
-position:fixed;
-width:100%;
-height:100%;
-background-image:
-linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
-linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
-background-size:50px 50px;
-z-index:-4;
-}
-
-/* NAVBAR */
-
-nav{
-position:fixed;
-top:0;
-left:0;
-=======
-}
-
-@keyframes move{
+@keyframes float{
 from{transform:translate(0,0);}
-to{transform:translate(120px,-80px);}
+to{transform:translate(100px,-80px);}
 }
 
-/* NAVBAR */
+/* NAV */
 nav{
 position:fixed;
 top:0;
->>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 width:100%;
-padding:25px 8%;
+padding:20px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(255,255,255,0.03);
-backdrop-filter:blur(15px);
-<<<<<<< HEAD
-border-bottom:1px solid rgba(255,255,255,0.06);
-=======
->>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(10px);
 z-index:1000;
 }
 
 .logo{
-font-size:32px;
-font-weight:800;
+font-size:28px;
+font-weight:900;
 background:linear-gradient(to right,#8b5cf6,#06b6d4);
 -webkit-background-clip:text;
 -webkit-text-fill-color:transparent;
 }
 
-nav ul{
-display:flex;
-<<<<<<< HEAD
-gap:35px;
-=======
-gap:30px;
->>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
-list-style:none;
-}
-
-nav ul li a{
-text-decoration:none;
+nav button{
+padding:10px 20px;
+border:none;
+border-radius:10px;
+background:linear-gradient(to right,#8b5cf6,#06b6d4);
 color:white;
-<<<<<<< HEAD
-font-size:16px;
-transition:0.3s;
-position:relative;
-}
-
-nav ul li a::after{
-content:"";
-position:absolute;
-left:0;
-bottom:-5px;
-width:0%;
-height:2px;
-background:#8b5cf6;
-transition:0.4s;
-}
-
-nav ul li a:hover::after{
-width:100%;
+cursor:pointer;
 }
 
 /* HERO */
-
-=======
-}
-
-/* HERO */
->>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 .hero{
 min-height:100vh;
 display:flex;
-justify-content:space-between;
 align-items:center;
-<<<<<<< HEAD
-padding:150px 8%;
-gap:60px;
-position:relative;
+justify-content:space-between;
+padding:120px 8%;
+gap:40px;
 }
 
-.hero-text{
-flex:1;
-animation:fadeUp 1s ease;
+.hero h1{
+font-size:65px;
 }
 
-.tag{
-display:inline-block;
-padding:10px 20px;
-background:rgba(255,255,255,0.05);
-border:1px solid rgba(255,255,255,0.08);
-border-radius:50px;
-margin-bottom:30px;
-backdrop-filter:blur(10px);
+.hero span{
 color:#06b6d4;
-font-size:14px;
-}
-
-.hero-text h1{
-font-size:95px;
-line-height:1;
-font-weight:900;
-margin-bottom:30px;
-}
-
-.hero-text h1 span{
-=======
-padding:140px 8%;
-gap:60px;
-}
-
-.hero-text h1{
-font-size:80px;
-font-weight:900;
-}
-
-.hero-text span{
->>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
-background:linear-gradient(to right,#8b5cf6,#06b6d4);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
 }
 
 .typing{
-<<<<<<< HEAD
-font-size:28px;
 color:#06b6d4;
-height:40px;
-margin-bottom:25px;
-font-weight:600;
-}
-
-.hero-text p{
-font-size:18px;
-line-height:1.9;
-color:#cbd5e1;
-max-width:650px;
-margin-bottom:40px;
-}
-
-.buttons{
-display:flex;
-gap:20px;
-flex-wrap:wrap;
-}
-
-.btn{
-padding:18px 40px;
-border-radius:16px;
-text-decoration:none;
-font-weight:600;
-transition:0.4s;
-position:relative;
-overflow:hidden;
-=======
-color:#06b6d4;
-font-size:24px;
+font-size:22px;
+height:30px;
 margin:15px 0;
 }
 
-/* BUTTONS */
+/* BUTTON */
 .btn{
-padding:15px 30px;
+display:inline-block;
+padding:14px 28px;
 border-radius:12px;
 text-decoration:none;
-font-weight:600;
-display:inline-block;
->>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
+margin-right:10px;
 }
 
 .primary{
 background:linear-gradient(to right,#8b5cf6,#06b6d4);
 color:white;
-<<<<<<< HEAD
-box-shadow:0 0 40px rgba(139,92,246,0.35);
 }
 
-.primary:hover{
-transform:translateY(-5px) scale(1.03);
-=======
->>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
-}
-
-.secondary{
-background:rgba(255,255,255,0.05);
-<<<<<<< HEAD
-border:1px solid rgba(255,255,255,0.08);
-color:white;
-backdrop-filter:blur(10px);
-}
-
-.secondary:hover{
-background:rgba(255,255,255,0.1);
-}
-
-/* HERO CARD */
-
-.hero-image{
-flex:1;
-display:flex;
-justify-content:center;
-position:relative;
-animation:fadeUp 1.2s ease;
-}
-
-.main-card{
-width:430px;
-height:540px;
-border-radius:35px;
+/* CARD */
+.card{
+width:350px;
+height:450px;
+border-radius:20px;
 overflow:hidden;
-position:relative;
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:blur(20px);
-box-shadow:0 0 60px rgba(139,92,246,0.2);
-transition:0.5s;
 }
 
-.main-card:hover{
-transform:translateY(-10px);
-}
-
-.main-card img{
+.card img{
 width:100%;
 height:100%;
 object-fit:cover;
 }
 
-/* FLOATING TECH BOXES */
-
-.tech-box{
-position:absolute;
-padding:18px 28px;
-background:rgba(255,255,255,0.06);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,0.08);
-border-radius:20px;
-font-weight:600;
-animation:float 4s infinite ease-in-out;
-}
-
-.box1{
-top:40px;
-left:-40px;
-}
-
-.box2{
-bottom:60px;
-right:-40px;
-animation-delay:2s;
-}
-
-.box3{
-top:45%;
-left:-60px;
-animation-delay:1s;
-=======
-color:white;
-}
-
-/* SECTIONS */
+/* SERVICES */
 section{
-padding:120px 8%;
+padding:100px 8%;
 }
 
 .title{
 text-align:center;
-font-size:50px;
-margin-bottom:60px;
+font-size:45px;
+margin-bottom:50px;
 }
 
-/* CARDS */
-.card{
-background:rgba(255,255,255,0.04);
-padding:30px;
-border-radius:20px;
+.title span{color:#06b6d4;}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.box{
+padding:25px;
+border-radius:15px;
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
 }
 
 /* CONTACT */
-.contact-box{
-max-width:700px;
-margin:auto;
-padding:40px;
-background:rgba(255,255,255,0.04);
-border-radius:25px;
-}
-
 input,textarea{
 width:100%;
 padding:15px;
 margin:10px 0;
+border-radius:10px;
+border:none;
+background:rgba(255,255,255,0.05);
+color:white;
+}
+
+button.send{
+width:100%;
+padding:15px;
 border:none;
 border-radius:10px;
-background:rgba(255,255,255,0.05);
-color:white;
+background:linear-gradient(to right,#8b5cf6,#06b6d4);
 }
 
-/* FOOTER */
-footer{
-text-align:center;
-padding:40px;
-color:#94a3b8;
-}
-
-/* WHATSAPP BUTTON 🔥 */
+/* WHATSAPP BUTTON */
 .whatsapp{
 position:fixed;
-bottom:25px;
-right:25px;
-width:65px;
-height:65px;
+bottom:20px;
+right:20px;
 background:#25D366;
-border-radius:50%;
-display:flex;
-justify-content:center;
-align-items:center;
-font-size:32px;
-color:white;
-text-decoration:none;
-box-shadow:0 0 20px rgba(37,211,102,0.6);
-animation:float 3s infinite ease-in-out;
-z-index:9999;
->>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
-}
-
-@keyframes float{
-0%{transform:translateY(0);}
-<<<<<<< HEAD
-50%{transform:translateY(-15px);}
-100%{transform:translateY(0);}
-}
-
-/* SECTION */
-
-section{
-padding:130px 8%;
-}
-
-.title{
-font-size:60px;
-text-align:center;
-margin-bottom:80px;
-font-weight:900;
-}
-
-.title span{
-background:linear-gradient(to right,#8b5cf6,#06b6d4);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
-
-/* SERVICES */
-
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:35px;
-}
-
-.card{
-padding:45px;
-border-radius:30px;
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:blur(20px);
-transition:0.5s;
-position:relative;
-overflow:hidden;
-}
-
-.card::before{
-content:"";
-position:absolute;
-width:250px;
-height:250px;
-background:#8b5cf620;
-border-radius:50%;
-top:-120px;
-right:-120px;
-}
-
-.card:hover{
-transform:translateY(-10px);
-box-shadow:0 0 35px rgba(139,92,246,0.25);
-}
-
-.card h3{
-font-size:30px;
-margin-bottom:20px;
-}
-
-.card p{
-line-height:1.9;
-color:#cbd5e1;
-}
-
-/* PROJECTS */
-
-.projects{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(330px,1fr));
-gap:35px;
-}
-
-.project{
-height:280px;
-border-radius:30px;
-overflow:hidden;
-position:relative;
-cursor:pointer;
-}
-
-.project img{
-width:100%;
-height:100%;
-object-fit:cover;
-transition:0.5s;
-}
-
-.project:hover img{
-transform:scale(1.12);
-}
-
-.overlay{
-position:absolute;
-width:100%;
-height:100%;
-background:linear-gradient(to top,rgba(0,0,0,0.9),transparent);
-display:flex;
-align-items:flex-end;
-padding:35px;
-font-size:26px;
-font-weight:700;
-}
-
-/* CONTACT */
-
-.contact-box{
-max-width:850px;
-margin:auto;
-padding:60px;
-border-radius:35px;
-background:rgba(255,255,255,0.04);
-border:1px solid rgba(255,255,255,0.08);
-backdrop-filter:blur(20px);
-}
-
-.contact-box input,
-.contact-box textarea{
-width:100%;
-padding:20px;
-margin-bottom:25px;
-border:none;
-outline:none;
-border-radius:18px;
-background:rgba(255,255,255,0.05);
-color:white;
-font-size:16px;
-}
-
-.contact-box textarea{
-height:180px;
-}
-
-.contact-box button{
-width:100%;
-padding:20px;
-border:none;
-border-radius:18px;
-background:linear-gradient(to right,#8b5cf6,#06b6d4);
-color:white;
-font-size:18px;
-font-weight:700;
-cursor:pointer;
-transition:0.4s;
-}
-
-.contact-box button:hover{
-transform:scale(1.02);
-}
-
-/* FOOTER */
-
-footer{
-padding:50px;
-text-align:center;
-border-top:1px solid rgba(255,255,255,0.06);
-color:#94a3b8;
-}
-
-/* BACK TO TOP */
-
-.top{
-position:fixed;
-right:25px;
-bottom:25px;
 width:60px;
 height:60px;
-background:linear-gradient(to right,#8b5cf6,#06b6d4);
+border-radius:50%;
 display:flex;
 justify-content:center;
 align-items:center;
-border-radius:50%;
+font-size:30px;
 text-decoration:none;
-color:white;
-font-size:26px;
-box-shadow:0 0 30px rgba(139,92,246,0.35);
 }
 
-/* ANIMATION */
-
-@keyframes fadeUp{
-from{
-opacity:0;
-transform:translateY(50px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
-
-/* RESPONSIVE */
-
-@media(max-width:950px){
-
-.hero{
-flex-direction:column;
-text-align:center;
-}
-
-.hero-text h1{
-font-size:60px;
-}
-
-.hero-text p{
-margin:auto;
-margin-bottom:40px;
-}
-
-.buttons{
-justify-content:center;
-}
-
-nav{
-flex-direction:column;
-gap:20px;
-}
-
-nav ul{
-flex-wrap:wrap;
-justify-content:center;
-}
-
-.main-card{
-width:320px;
-height:420px;
-}
-
-.title{
-font-size:42px;
-}
-
-.tech-box{
+/* LOGIN MODAL */
+.modal{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.8);
 display:none;
+justify-content:center;
+align-items:center;
 }
 
+.boxlogin{
+background:#111827;
+padding:30px;
+border-radius:15px;
+width:300px;
+}
+
+.close{
+float:right;
+cursor:pointer;
+color:red;
 }
 
 </style>
 
-=======
-50%{transform:translateY(-10px);}
-100%{transform:translateY(0);}
-}
-
-</style>
->>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 </head>
 
 <body>
 
-<!-- BACKGROUND -->
-<<<<<<< HEAD
-
-<div class="bg-animation">
-
-<div class="circle circle1"></div>
-<div class="circle circle2"></div>
-<div class="circle circle3"></div>
-
-</div>
-
-<div class="grid"></div>
-
-<!-- NAVBAR -->
-
-<nav>
-
-<div class="logo">RISY DESIGNER</div>
-
-<ul>
-
-<li><a href="#home">Home</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-</nav>
-
-<!-- HERO -->
-
-=======
-<div class="bg-animation">
-<div class="circle circle1"></div>
-<div class="circle circle2"></div>
+<div class="bg">
+<div class="blob b1"></div>
+<div class="blob b2"></div>
 </div>
 
 <!-- NAV -->
 <nav>
-<div class="logo">RISY DESIGNER</div>
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
+<div class="logo">RISY PRO</div>
+<button onclick="openLogin()">Login</button>
 </nav>
 
 <!-- HERO -->
->>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
-<section class="hero" id="home">
+<section class="hero">
 
-<div class="hero-text">
-
-<<<<<<< HEAD
-<div class="tag">
-🔥 NEXT LEVEL DIGITAL EXPERIENCE
-</div>
-
-<h1>
-Modern <span>IT</span><br>
-Solutions
-</h1>
+<div>
+<h1>Next Level <span>Web</span> Design</h1>
 
 <div class="typing" id="typing"></div>
-
-<p>
-I create premium websites, software systems,
-branding designs and modern digital experiences
-with futuristic UI/UX and smooth animations.
-</p>
-
-<div class="buttons">
-
-<a href="#contact" class="btn primary">
-Start Project
-</a>
-
-<a href="#projects" class="btn secondary">
-View Portfolio
-</a>
-
-</div>
-
-</div>
-
-<div class="hero-image">
-
-<div class="main-card">
-
-<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1000&auto=format&fit=crop">
-
-<div class="tech-box box1">
-💻 Web Design
-</div>
-
-<div class="tech-box box2">
-⚡ Premium UI
-</div>
-
-<div class="tech-box box3">
-🚀 Modern Tech
-</div>
-
-</div>
-=======
-<h1>Modern <span>IT</span> Solutions</h1>
-
-<div class="typing" id="typing"></div>
-
-<p>Premium Web Design & Development Services</p>
 
 <a href="#contact" class="btn primary">Start Project</a>
-<a href="#services" class="btn secondary">View Work</a>
->>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
+</div>
 
+<div class="card">
+<img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085">
 </div>
 
 </section>
 
 <!-- SERVICES -->
-<<<<<<< HEAD
+<section>
+<h2 class="title">My <span>Services</span></h2>
 
-<section id="services">
-
-<h2 class="title">
-My <span>Services</span>
-</h2>
-
-<div class="services">
-
-<div class="card">
-
-<h3>🌐 Web Development</h3>
-
-<p>
-Modern responsive business websites with premium animations and futuristic design.
-</p>
-
+<div class="grid">
+<div class="box">Web Design</div>
+<div class="box">UI/UX</div>
+<div class="box">Software Dev</div>
 </div>
-
-<div class="card">
-
-<h3>🎨 Graphic Design</h3>
-
-<p>
-Creative branding, social media posters, logo design and modern visual identity.
-</p>
-
-</div>
-
-<div class="card">
-
-<h3>💻 Software Solutions</h3>
-
-<p>
-Desktop applications, automation systems and modern software experiences.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- PROJECTS -->
-
-<section id="projects">
-
-<h2 class="title">
-Latest <span>Projects</span>
-</h2>
-
-<div class="projects">
-
-<div class="project">
-
-<img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop">
-
-<div class="overlay">
-Business Website
-</div>
-
-</div>
-
-<div class="project">
-
-<img src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?q=80&w=1000&auto=format&fit=crop">
-
-<div class="overlay">
-Creative Branding
-</div>
-
-</div>
-
-<div class="project">
-
-<img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop">
-
-<div class="overlay">
-Software Project
-</div>
-
-</div>
-
-</div>
-=======
-<section id="services">
-
-<h2 class="title">Services</h2>
-
-<div class="card">Web Development</div>
->>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
-
 </section>
 
 <!-- CONTACT -->
-<<<<<<< HEAD
-
 <section id="contact">
+<h2 class="title">Contact <span>Me</span></h2>
 
-<h2 class="title">
-Contact <span>Me</span>
-</h2>
-
-<div class="contact-box">
-
-<input type="text" placeholder="Your Name">
-
-<input type="email" placeholder="Your Email">
-
-<textarea placeholder="Tell Me About Your Project"></textarea>
-
-<button>
-Send Message
-</button>
-=======
-<section id="contact">
-
-<h2 class="title">Contact</h2>
-
-<div class="contact-box">
-
-<input placeholder="Name">
-<input placeholder="Email">
+<input type="text" placeholder="Name">
+<input type="email" placeholder="Email">
 <textarea placeholder="Message"></textarea>
 
-<button class="btn primary">Send</button>
->>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
+<button class="send">Send</button>
+</section>
+
+<!-- WHATSAPP -->
+<a class="whatsapp" href="https://wa.me/94771815849" target="_blank">
+💬
+</a>
+
+<!-- LOGIN MODAL -->
+<div class="modal" id="modal">
+
+<div class="boxlogin">
+<span class="close" onclick="closeLogin()">X</span>
+
+<h3>Login</h3>
+<input type="text" placeholder="Username">
+<input type="password" placeholder="Password">
+<button class="send">Login</button>
 
 </div>
 
-</section>
-
-<!-- FOOTER -->
-<<<<<<< HEAD
-
-<footer>
-
-<h2>RISY DESIGNER</h2>
-
-<p>
-© 2026 All Rights Reserved
-</p>
-
-</footer>
-
-<!-- TOP BUTTON -->
-
-<a href="#home" class="top">
-↑
-</a>
+</div>
 
 <script>
 
-/* TYPING EFFECT */
-
-const texts=[
-"Web Developer",
-"Graphic Designer",
-"Software Developer",
-"UI/UX Designer"
-];
-
-let speed=100;
-let textIndex=0;
-let charIndex=0;
-
-const typing=document.getElementById("typing");
+// typing
+let words=["Web Developer","UI Designer","Software Engineer"];
+let i=0,j=0,el=document.getElementById("typing");
 
 function type(){
-
-if(charIndex<texts[textIndex].length){
-
-typing.innerHTML+=texts[textIndex].charAt(charIndex);
-
-charIndex++;
-
-setTimeout(type,speed);
-
-}else{
-
-setTimeout(erase,1500);
-
-}
-
-}
-
-function erase(){
-
-if(charIndex>0){
-
-typing.innerHTML=texts[textIndex].substring(0,charIndex-1);
-
-charIndex--;
-
-setTimeout(erase,50);
-
-}else{
-
-textIndex++;
-
-if(textIndex>=texts.length){
-textIndex=0;
-}
-
-setTimeout(type,500);
-
-}
-
-}
-
-document.addEventListener("DOMContentLoaded",function(){
-
-if(texts.length){
-setTimeout(type,1000);
-}
-
-});
-=======
-<footer>
-© 2026 RISY DESIGNER
-</footer>
-
-<!-- WHATSAPP BUTTON 🔥 -->
-<a class="whatsapp"
-href="https://wa.me/94771815849?text=Hi%20I%20need%20a%20website%20design"
-target="_blank">
-
-💬
-
-</a>
-
-<!-- SCRIPT -->
-<script>
-
-const texts=["Web Developer","Designer","Software Developer"];
-let i=0,j=0;
-const el=document.getElementById("typing");
-
-function type(){
-if(j<texts[i].length){
-el.innerHTML+=texts[i][j++];
+if(j<words[i].length){
+el.innerHTML+=words[i][j++];
 setTimeout(type,100);
 }else{
 setTimeout(erase,1000);
@@ -1091,22 +313,26 @@ setTimeout(erase,1000);
 
 function erase(){
 if(j>0){
-el.innerHTML=texts[i].substring(0,--j);
+el.innerHTML=words[i].substring(0,--j);
 setTimeout(erase,50);
 }else{
-i=(i+1)%texts.length;
-setTimeout(type,500);
+i=(i+1)%words.length;
+setTimeout(type,300);
 }
 }
 
 type();
->>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
+
+// login
+function openLogin(){
+document.getElementById("modal").style.display="flex";
+}
+
+function closeLogin(){
+document.getElementById("modal").style.display="none";
+}
 
 </script>
 
 </body>
-<<<<<<< HEAD
-
-=======
->>>>>>> 6c289d08c7786b3948b8d0aa1b78d4bb34d9d260
 </html>
